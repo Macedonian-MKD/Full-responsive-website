@@ -1,0 +1,231 @@
+@page {
+    margin: .5cm; /* da sme sigurni deka sekogas ke imame margini za sodrzinata */
+}
+
+body{
+    color:black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    font-weight: normal;
+    margin: 0;
+    padding:0;
+}
+
+
+h1,h2,h3,h4{
+    margin:0;
+    font-family: "Open Sans",sans-serif;
+}
+
+
+h1{
+    font-size: 1.7em;
+}
+
+h2{
+    font-size: 1.4em;
+}
+
+h3{
+    font-size: 1.2em;
+}
+
+h4{
+    font-size: 1.1em;
+}
+
+p{
+    margin: 0 0 1em 0;
+    font-size: .9em;
+}
+
+
+a:visited,a{
+    color:inherit; /* se nasleduva osnovniot stil na body */
+    text-decoration: none;
+}
+
+a::after,a:visited::after{
+        content:  "("attr(href)")";
+        font-style: italic;
+        word-wrap: break-word; /* sprecuvame dolgata url adresa da gi pomesti drugite elementi i da go pomesa rasporedot*/
+}
+
+nav { 
+    display: none; /* na nikoj nema da mu pomogne navigacija citajki ja sodrzinata*/
+}
+
+header{
+    position: relative;
+   
+}
+
+header::after{
+    content: url(/images/p3-black.jpg);
+    
+
+}
+header div.logo{
+    display: block;
+    width: 145px;
+    height: 60px;
+    position: absolute; /* vrz osnova na goleminata na nasata nova grafika*/    
+    top: 40px;
+    left:20px;
+}
+
+.logo a::after{
+    display: block;
+    position: absolute;
+    top:20px;
+    left:355px; /* 30 px pomegu logoto i linkot prostor, bidejki logoto e siroko 145px*/
+}
+
+.banner_content{
+    position: absolute;
+    top:270px;
+    left:40%;
+}
+
+.banner_content h1{
+    margin-bottom: 20px;
+}
+header div.logo::before{
+    content: url(/images/logo-black.jpg);
+   width: 90%;
+}
+
+header div.logo span{ 
+    display: none; /* go krireme naslovot , samo logoto ke se gleda , slikata vo pozadina.. */
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section::after{ /* ZA SITE SEKCII */
+    content: "";
+    display: block;
+    clear: both;
+}
+
+section.about{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+section.services{
+    text-align: center;
+    page-break-inside: avoid;
+}
+
+.diff_services img{
+    display: none;
+}
+
+
+
+.diff_services .diff_services_item:nth-child(1)::before{
+    content: url(/images/services-1-black.jpg);
+}
+
+
+.diff_services .diff_services_item:nth-child(2)::before{
+    content: url(/images/services-2-black.jpg);
+}
+
+
+.diff_services .diff_services_item:nth-child(3)::before{
+    content: url(/images/services-3-black.jpg);
+}
+
+section.contactus{
+  display: none;
+}
+.ourteam{
+    page-break-inside: avoid;
+}
+.ourteam h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.team_members img{
+    display: none;
+}
+.team_members{
+    
+    display: inline-block;
+}
+
+.team-1{
+    text-align: center;
+}
+.team-1 div[data-name="Дарко Пишевски"]::before{
+    content: url(/images/team1-black.jpg);
+}
+
+.team-1 div[data-name="Софија Максимова"]::before{
+    content: url(/images/team2-black.jpg);
+}
+
+.team-1 div[data-name="Алек Петров"]::before{
+    content: url(/images/team3-black.jpg);
+}
+
+.team-2{
+    text-align: center;
+}
+.team-2 div[data-name="Никола Џуперски"]::before{
+    content: url(/images/team4-black.jpg);
+}
+
+.team-2 div[data-name="Марија Марева"]::before{
+    content: url(/images/team5-black.jpg);
+}
+
+.team-2 div[data-name="Моника Милинева"]::before{
+    content: url(/images/team6-black.jpg);
+}
+
+footer{
+    border-top: 2px solid black;
+    position: relative; /* za da go pozicionirame QR kodot vo ovoj element */
+    min-height: 200px; /*ako nema sodrzina vo footerot, toj ke bide dovolno visok da go sobere celiot QR kod */
+    padding: 20px 0 0 170px; /* prostor od levata strana za QR kodot */
+}
+
+footer::after{
+    content: url(images/qr.jpg);
+    position: absolute;
+    top:20px;
+    left:0px;
+}
+
+footer img{
+    display: none;
+}
+
+footer .mrezi {
+    margin-left: 100px;
+}
+
+footer .socijalni{
+    margin-left: 100px;;
+}
+
+footer .privacy{
+    margin-left: 100px;
+}
+
+footer .arrow{
+    display: none;
+}
+
+footer .privacy::after{
+    content: "Оваа страна е исприната од www.viking.com.mk";
+    display: block;
+    margin-top: 30px;
+    font-size: .9em;
+    font-style: italic;
+}
